@@ -22,13 +22,11 @@ namespace TestAppHttpClient.ViewModels
             {
                 HttpClient client = new HttpClient();
 
-                //тут работает
-                var result = await client.GetStringAsync("http://192.168.0.2:5170/");
+                var result = await client.GetFromJsonAsync<User>("http://localhost:5170/users/1");
 
-                //так тоже не работает
                 //var resultJson = await client.GetFromJsonAsync<string>("http://localhost:5170/");
 
-                Greeting = result;
+                Greeting = result!.Login;
             });
         }
         [Reactive]

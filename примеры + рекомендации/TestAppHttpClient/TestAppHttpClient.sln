@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34414.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAppHttpClient", "TestAppHttpClient\TestAppHttpClient\TestAppHttpClient.csproj", "{6A9B0221-E780-4D5D-96A7-964C4E6C5AFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAppHttpClient", "TestAppHttpClient\TestAppHttpClient\TestAppHttpClient.csproj", "{6A9B0221-E780-4D5D-96A7-964C4E6C5AFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAppHttpClient.Android", "TestAppHttpClient\TestAppHttpClient.Android\TestAppHttpClient.Android.csproj", "{B055E9C3-30F7-46E4-B089-89F5B5C96C53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAppHttpClient.Android", "TestAppHttpClient\TestAppHttpClient.Android\TestAppHttpClient.Android.csproj", "{B055E9C3-30F7-46E4-B089-89F5B5C96C53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAppHttpClient.Desktop", "TestAppHttpClient\TestAppHttpClient.Desktop\TestAppHttpClient.Desktop.csproj", "{7879AB75-B64C-4B15-823F-1BB68C40901E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAppHttpClient.Desktop", "TestAppHttpClient\TestAppHttpClient.Desktop\TestAppHttpClient.Desktop.csproj", "{7879AB75-B64C-4B15-823F-1BB68C40901E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAppHttpClient.Browser", "TestAppHttpClient\TestAppHttpClient.Browser\TestAppHttpClient.Browser.csproj", "{F453573A-A957-4CCC-AC4E-1EB6FCA5ABF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAppHttpClient.Browser", "TestAppHttpClient\TestAppHttpClient.Browser\TestAppHttpClient.Browser.csproj", "{F453573A-A957-4CCC-AC4E-1EB6FCA5ABF9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "..\..\..\..\..\ClientServer\WebAPI\WebAPI.csproj", "{DCB4CB2B-8969-435D-AA41-E64BDB4C10D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "TestAppHttpClient\WebAPI\WebAPI.csproj", "{354A8371-6328-440E-9151-EFE9CB31FD23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,10 @@ Global
 		{F453573A-A957-4CCC-AC4E-1EB6FCA5ABF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F453573A-A957-4CCC-AC4E-1EB6FCA5ABF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F453573A-A957-4CCC-AC4E-1EB6FCA5ABF9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DCB4CB2B-8969-435D-AA41-E64BDB4C10D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DCB4CB2B-8969-435D-AA41-E64BDB4C10D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DCB4CB2B-8969-435D-AA41-E64BDB4C10D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DCB4CB2B-8969-435D-AA41-E64BDB4C10D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{354A8371-6328-440E-9151-EFE9CB31FD23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{354A8371-6328-440E-9151-EFE9CB31FD23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{354A8371-6328-440E-9151-EFE9CB31FD23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{354A8371-6328-440E-9151-EFE9CB31FD23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
