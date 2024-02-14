@@ -1,0 +1,1 @@
+<JsonSerializerIsReflectionEnabledByDefault>true</JsonSerializerIsReflectionEnabledByDefault> - в конфигах проекта (браузер и мобильного)
