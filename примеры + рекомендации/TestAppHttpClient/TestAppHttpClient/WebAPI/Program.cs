@@ -24,6 +24,11 @@ namespace WebAPI
 
             app.UseAuthorization();
 
+            
+
+            //вот это необходимо добавить в API
+            app.UseCors(builder => builder.AllowAnyOrigin());
+
 
             app.MapControllers();
 
