@@ -10,12 +10,12 @@ namespace WebAPI.Controllers
     [Route("[controller]")]
     public class UsersController : ControllerBase
     {
-        ApplicationContext db = new ApplicationContext();
 
         //
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> Get(int id)
         {
+            ApplicationContext db = new ApplicationContext();
             var user = await db.Users.Where(x => x.Id == id).FirstOrDefaultAsync();
             if (user == null)
             {
