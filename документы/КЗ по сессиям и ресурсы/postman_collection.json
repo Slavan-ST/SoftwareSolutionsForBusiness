@@ -1,0 +1,1189 @@
+{
+	"info": {
+		"_postman_id": "4884c1b1-ec9d-4782-9573-704bbd5ea7ef",
+		"name": "DS_2023",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6149763"
+	},
+	"item": [
+		{
+			"name": "Warehouses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{root_url}}/Warehouses",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"Warehouses"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{root_url}}/Warehouses",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"Warehouses"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 09:12:23 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Склад №1\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Склад №2\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Склад №3\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Medicines",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{root_url}}/Medicines?WarehouseId=2",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"Medicines"
+					],
+					"query": [
+						{
+							"key": "WarehouseId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{root_url}}/Medicines?WarehouseId=2",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"Medicines"
+							],
+							"query": [
+								{
+									"key": "WarehouseId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 09:12:43 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"name\": \"Вольтарен 25мг/мл 3мл 5 шт. раствор для внутримышечного введения\",\n        \"tradeName\": \"Вольтарен\",\n        \"manufacturer\": \"Новартис Фарма АГ\",\n        \"image\": \"https://imgs.asna.ru/iblock/2d7/2d71cac199086932e4b68e6ae633eca8/100082.jpg\",\n        \"price\": 79,\n        \"stockQuantity\": 41,\n        \"warehouseId\": 2\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Кальцекс 500мг 10 шт. таблетки татхимфарм\",\n        \"tradeName\": \"Кальцекс\",\n        \"manufacturer\": \"Татхимфармпрепараты АО\",\n        \"image\": \"https://imgs.asna.ru/iblock/177/177882ef988b42be05abd45dbb7d5fba/816f88b93afa5c096afbeec679ffd4c0.jpg\",\n        \"price\": 42,\n        \"stockQuantity\": 69,\n        \"warehouseId\": 2\n    },\n    {\n        \"id\": 7,\n        \"name\": \"Мукалтин 50мг 10 шт. таблетки россия\",\n        \"tradeName\": \"Мукалтин\",\n        \"manufacturer\": \"\",\n        \"image\": \"https://imgs.asna.ru/iblock/92e/92e31f17b43b697afd37fd8c96395172/babd684d2b732c4503dae861a790670b.jpg\",\n        \"price\": 29,\n        \"stockQuantity\": 1,\n        \"warehouseId\": 2\n    },\n    {\n        \"id\": 9,\n        \"name\": \"Грудной эликсир 25мл\",\n        \"tradeName\": \"Грудной Эликсир\",\n        \"manufacturer\": \"\",\n        \"image\": \"https://imgs.asna.ru/iblock/8b9/8b9d9a3a2317c41f0d2abafe53a4586b/73a84cb3004b388d538f4ae5a53f2d54.jpg\",\n        \"price\": 35,\n        \"stockQuantity\": 17,\n        \"warehouseId\": 2\n    },\n    {\n        \"id\": 10,\n        \"name\": \"Синекод при сухом кашле, сироп 1,5мг/мл, 200мл\",\n        \"tradeName\": \"Синекод\",\n        \"manufacturer\": \"ГлаксоСмитКляйн Трейдинг ЗАО\",\n        \"image\": \"https://imgs.asna.ru/iblock/5e0/5e03433060f010bfa1887e7d98b94472/42cb7712a1bd06b6ac9bf4d5ef8600bf.jpg\",\n        \"price\": 470,\n        \"stockQuantity\": 29,\n        \"warehouseId\": 2\n    },\n    {\n        \"id\": 13,\n        \"name\": \"Амбробене 30мг 20 шт. таблетки\",\n        \"tradeName\": \"Амбробене\",\n        \"manufacturer\": \"Ратиофарм\",\n        \"image\": \"https://imgs.asna.ru/iblock/7ef/7ef31a87ec41f4a82a7cae73cd81818b/01dad5218f4c2ca1e5f73323ce1ff507.jpg\",\n        \"price\": 124,\n        \"stockQuantity\": 45,\n        \"warehouseId\": 2\n    },\n    {\n        \"id\": 14,\n        \"name\": \"Амбробене 15мг/5мл 100мл сироп\",\n        \"tradeName\": \"Амбробене\",\n        \"manufacturer\": \"Тева\",\n        \"image\": \"https://imgs.asna.ru/iblock/dc5/dc55641bcae1b8f38be7c081201da11f/7311ae11ac150a43b922a1f1016da393.jpg\",\n        \"price\": 109,\n        \"stockQuantity\": 28,\n        \"warehouseId\": 2\n    },\n    {\n        \"id\": 22,\n        \"name\": \"Фенистил капли от аллергии для приема внутрь, 0,1%, 20мл\",\n        \"tradeName\": \"Фенистил\",\n        \"manufacturer\": \"ГлаксоСмитКляйн Трейдинг ЗАО\",\n        \"image\": \"https://imgs.asna.ru/iblock/16b/16b45dda67f7dde838bf51602a002b44/0d9179638dcb28e854dd23b74d8d05a8.jpg\",\n        \"price\": 435,\n        \"stockQuantity\": 31,\n        \"warehouseId\": 2\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Medicine running out",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{root_url}}/Medicines/RunningOut",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"Medicines",
+						"RunningOut"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{root_url}}/Medicines/RunningOut",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"Medicines",
+								"RunningOut"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 14:50:56 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Эвкалипт лист 75г\",\n        \"manufacturer\": \"Красногорсклексредства\",\n        \"image\": \"https://imgs.asna.ru/iblock/df7/df719d36294b0f0ef9cb60d4e3a85a55/EVKALIPT_75g_3D.jpg\",\n        \"price\": 99,\n        \"stockQuantity\": 15,\n        \"optimalQuantity\": 20\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Вольтарен 50мг 10 шт. суппозитории ректальные\",\n        \"manufacturer\": \"Новартис Фарма АГ\",\n        \"image\": \"https://imgs.asna.ru/iblock/bd6/bd6fed2d36e8464ac77be84ca73b1216/100113.jpg\",\n        \"price\": 289,\n        \"stockQuantity\": 21,\n        \"optimalQuantity\": 25\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Фарингосепт 20 шт. таблетки для рассасывания с.к. терапия с.а.\",\n        \"manufacturer\": \"Сан Фармасьютикал Индастриз Лтд\",\n        \"image\": \"https://imgs.asna.ru/iblock/8e3/8e372affe725a67e8da6595f74158f0b/5646a277310706921bcde68701c339b6.jpg\",\n        \"price\": 252,\n        \"stockQuantity\": 1,\n        \"optimalQuantity\": 15\n    },\n    {\n        \"id\": 7,\n        \"name\": \"Мукалтин 50мг 10 шт. таблетки россия\",\n        \"manufacturer\": \"\",\n        \"image\": \"https://imgs.asna.ru/iblock/92e/92e31f17b43b697afd37fd8c96395172/babd684d2b732c4503dae861a790670b.jpg\",\n        \"price\": 29,\n        \"stockQuantity\": 1,\n        \"optimalQuantity\": 15\n    },\n    {\n        \"id\": 9,\n        \"name\": \"Грудной эликсир 25мл\",\n        \"manufacturer\": \"\",\n        \"image\": \"https://imgs.asna.ru/iblock/8b9/8b9d9a3a2317c41f0d2abafe53a4586b/73a84cb3004b388d538f4ae5a53f2d54.jpg\",\n        \"price\": 35,\n        \"stockQuantity\": 17,\n        \"optimalQuantity\": 20\n    },\n    {\n        \"id\": 11,\n        \"name\": \"Либексин 100мг 20 шт. таблетки\",\n        \"manufacturer\": \"Опелла Хелскеа Коммершиал Лтд.\",\n        \"image\": \"https://imgs.asna.ru/iblock/382/3823cf212eed7b95387fb99935940dbc/100222.jpg\",\n        \"price\": 789,\n        \"stockQuantity\": 5,\n        \"optimalQuantity\": 25\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Medicine invoice",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "CompetitorKey",
+						"value": "{{competitor_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"DocumentDate\": \"2023-09-11\",\n    \"Provider\": \"У сороки боли\",\n    \"Medicines\": \n    [\n        {\n            \"Id\": 99,\n            \"Price\": 100,\n            \"Quantity\": 16,\n            \"ExpirationDate\": \"2024-01-15\"\n        },\n        {\n            \"Id\": 78,\n            \"Price\": 200,\n            \"Quantity\": 32,\n            \"ExpirationDate\": \"2025-06-24\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root_url}}/Medicines/Invoice",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"Medicines",
+						"Invoice"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "400 Expiration date",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "CompetitorKey",
+								"value": "{{competitor_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"DocumentDate\": \"2023-09-11\",\n    \"Provider\": \"У сороки боли\",\n    \"Medicines\": \n    [\n        {\n            \"Id\": 99,\n            \"Price\": 100,\n            \"Quantity\": 16,\n            \"ExpirationDate\": \"2024-01-15\"\n        },\n        {\n            \"Id\": 78,\n            \"Price\": 200,\n            \"Quantity\": 32,\n            \"ExpirationDate\": \"2023-06-24\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{root_url}}/Medicines/Invoice",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"Medicines",
+								"Invoice"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 14:47:00 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "\"Невозможно принять счет, так как в списке встречаются просроченные препараты\""
+				},
+				{
+					"name": "401 Incorrect key",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "CompetitorKey",
+								"value": "{{competitor_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"DocumentDate\": \"2023-09-11\",\n    \"Provider\": \"У сороки боли\",\n    \"Medicines\": \n    [\n        {\n            \"Id\": 99,\n            \"Price\": 100,\n            \"Quantity\": 16,\n            \"ExpirationDate\": \"2024-01-15\"\n        },\n        {\n            \"Id\": 78,\n            \"Price\": 200,\n            \"Quantity\": 32,\n            \"ExpirationDate\": \"2025-06-24\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{root_url}}/Medicines/Invoice",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"Medicines",
+								"Invoice"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 14:53:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "CompetitorKey",
+								"value": "{{competitor_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"DocumentDate\": \"2023-09-11\",\n    \"Provider\": \"У сороки боли\",\n    \"Medicines\": \n    [\n        {\n            \"Id\": 99,\n            \"Price\": 100,\n            \"Quantity\": 16,\n            \"ExpirationDate\": \"2024-01-15\"\n        },\n        {\n            \"Id\": 78,\n            \"Price\": 200,\n            \"Quantity\": 32,\n            \"ExpirationDate\": \"2025-06-24\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{root_url}}/Medicines/Invoice",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"Medicines",
+								"Invoice"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 14:54:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Medicine writeoff",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "CompetitorKey",
+						"value": "{{competitor_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"MedicineId\": 78,\n    \"Quantity\": 200,\n    \"Reason\": \"Невкусное\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root_url}}/Medicines/Writeoff",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"Medicines",
+						"Writeoff"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "400 Incorrect quantity",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "CompetitorKey",
+								"value": "{{competitor_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"MedicineId\": 78,\n    \"Quantity\": -2,\n    \"Reason\": \"Невкусное\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{root_url}}/Medicines/Writeoff",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"Medicines",
+								"Writeoff"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 14:54:55 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "\"Нет смысла делать списание отрицательного/нулевого количества\""
+				},
+				{
+					"name": "400 Empty reason",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "CompetitorKey",
+								"value": "{{competitor_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"MedicineId\": 78,\n    \"Quantity\": 2,\n    \"Reason\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{root_url}}/Medicines/Writeoff",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"Medicines",
+								"Writeoff"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 15:04:42 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "\"Причина обязательна для фиксации факта списания\""
+				},
+				{
+					"name": "404 Not found medicine",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "CompetitorKey",
+								"value": "{{competitor_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"MedicineId\": 178,\n    \"Quantity\": 2,\n    \"Reason\": \"Невкусное\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{root_url}}/Medicines/Writeoff",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"Medicines",
+								"Writeoff"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 15:05:18 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "\"Медицинский препарат с указанным ID не найден\""
+				},
+				{
+					"name": "400 Not enough in stock",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "CompetitorKey",
+								"value": "{{competitor_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"MedicineId\": 78,\n    \"Quantity\": 200,\n    \"Reason\": \"Невкусное\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{root_url}}/Medicines/Writeoff",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"Medicines",
+								"Writeoff"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 15:07:53 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "\"На остатке меньшее количество, чем вы пытаетесь списать\""
+				},
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "CompetitorKey",
+								"value": "{{competitor_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"MedicineId\": 78,\n    \"Quantity\": 200,\n    \"Reason\": \"Невкусное\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{root_url}}/Medicines/Writeoff",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"Medicines",
+								"Writeoff"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 15:07:03 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Medicine transfer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "CompetitorKey",
+						"value": "{{competitor_key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{root_url}}/Medicines/84/Transfer?destinationWarehouseId=2",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"Medicines",
+						"84",
+						"Transfer"
+					],
+					"query": [
+						{
+							"key": "destinationWarehouseId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "404 Not found warehouse",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "CompetitorKey",
+								"value": "{{competitor_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{root_url}}/Medicines/84/Transfer?destinationWarehouseId=4",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"Medicines",
+								"84",
+								"Transfer"
+							],
+							"query": [
+								{
+									"key": "destinationWarehouseId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 15:11:02 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "\"Склад назначения с указанным Id не найден\""
+				},
+				{
+					"name": "400 Same warehouse",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "CompetitorKey",
+								"value": "{{competitor_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{root_url}}/Medicines/84/Transfer?destinationWarehouseId=2",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"Medicines",
+								"84",
+								"Transfer"
+							],
+							"query": [
+								{
+									"key": "destinationWarehouseId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 15:11:44 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "\"Склад назначения совпадает с текущим складом\""
+				},
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "CompetitorKey",
+								"value": "{{competitor_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{root_url}}/Medicines/84/Transfer?destinationWarehouseId=3",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"Medicines",
+								"84",
+								"Transfer"
+							],
+							"query": [
+								{
+									"key": "destinationWarehouseId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 15:12:12 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Medicine issue requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{root_url}}/IssueRequests",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"IssueRequests"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{root_url}}/IssueRequests",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"IssueRequests"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 15:12:41 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"createdTime\": \"2023-09-21T13:16:42\",\n        \"purpose\": \"Хирургическое отделение\"\n    },\n    {\n        \"id\": 4,\n        \"createdTime\": \"2023-09-21T13:16:43\",\n        \"purpose\": \"Педиaтрическое отделение\"\n    },\n    {\n        \"id\": 5,\n        \"createdTime\": \"2023-09-21T13:16:43\",\n        \"purpose\": \"Терaпевтическое отделение\"\n    },\n    {\n        \"id\": 6,\n        \"createdTime\": \"2023-09-21T13:16:43\",\n        \"purpose\": \"Травмпункт\"\n    },\n    {\n        \"id\": 7,\n        \"createdTime\": \"2023-09-21T13:16:43\",\n        \"purpose\": \"Лaборaтория\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Medicine issue request items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{root_url}}/IssueRequests/4",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"IssueRequests",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{root_url}}/IssueRequests/4",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"IssueRequests",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 15:12:56 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"medicine\": {\n            \"id\": 105,\n            \"image\": \"https://imgs.asna.ru/iblock/eb9/eb94cbce85214d2062237a911a8e7fbf/44fdcb022f9c6b3a3ce4054a38838bd1.jpg\",\n            \"name\": \"Лимонтар 30 шт. таблетки\"\n        },\n        \"quantity\": 2\n    },\n    {\n        \"medicine\": {\n            \"id\": 91,\n            \"image\": \"https://imgs.asna.ru/iblock/f74/f740214e8af8fa66e0c86a2848a07cec/100662.jpg\",\n            \"name\": \"Радевит 35г мазь для наружного применения\"\n        },\n        \"quantity\": 7\n    },\n    {\n        \"medicine\": {\n            \"id\": 165,\n            \"image\": \"https://imgs.asna.ru/iblock/d94/d94e78e12e98cc625677bc3ab1124e33/101502.jpg\",\n            \"name\": \"Хвойный экстракт золото леса брикет 50г 2 шт.\"\n        },\n        \"quantity\": 3\n    },\n    {\n        \"medicine\": {\n            \"id\": 164,\n            \"image\": \"https://imgs.asna.ru/iblock/329/32986713fccc42d38c48ac7b42e5f087/48bc09957661bc3c5b16c6ba693782be.jpg\",\n            \"name\": \"Хвощ полевой трава 50г\"\n        },\n        \"quantity\": 8\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Medicine issue request complete",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "CompetitorKey",
+						"value": "{{competitor_key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{root_url}}/IssueRequests/2/Complete",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"IssueRequests",
+						"2",
+						"Complete"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "400 Already completed request",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "CompetitorKey",
+								"value": "{{competitor_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{root_url}}/IssueRequests/3/Complete",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"IssueRequests",
+								"3",
+								"Complete"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 15:13:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "\"Заявка на выдачу уже выполнена\""
+				},
+				{
+					"name": "400 Not enough medicine",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "CompetitorKey",
+								"value": "{{competitor_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{root_url}}/IssueRequests/4/Complete",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"IssueRequests",
+								"4",
+								"Complete"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 15:14:50 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "\"Невозможно выполнить заявку прямо сейчас, так как не хватает препарата с Id=105 (запрашивается 700 шт., а в наличии только 6 шт.)\""
+				},
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "CompetitorKey",
+								"value": "{{competitor_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{root_url}}/IssueRequests/2/Complete",
+							"host": [
+								"{{root_url}}"
+							],
+							"path": [
+								"IssueRequests",
+								"2",
+								"Complete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 15:15:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "root_url",
+			"value": "http://10.30.76.66:8082",
+			"type": "string"
+		},
+		{
+			"key": "competitor_key",
+			"value": "ILOVEWSR2023",
+			"type": "string"
+		}
+	]
+}
