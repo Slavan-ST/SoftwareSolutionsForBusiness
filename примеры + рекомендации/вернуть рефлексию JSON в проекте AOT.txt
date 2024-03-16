@@ -1,0 +1,3 @@
+В Avalonia - в конфигах проекта (браузер и мобильного)
+
+<JsonSerializerIsReflectionEnabledByDefault>true</JsonSerializerIsReflectionEnabledByDefault> 
