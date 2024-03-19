@@ -59,7 +59,7 @@ namespace TestClientForAPI.ViewModels
 
 
                 HttpClient httpClient = new HttpClient();
-                var response = await httpClient.GetAsync("http://localhost:8080/PersonLocations");
+                var response = await httpClient.GetAsync("http://localhost:4914/PersonLocations");
 
                 //Получение содержимого ответа
                 string text = await response.Content.ReadAsStringAsync();
