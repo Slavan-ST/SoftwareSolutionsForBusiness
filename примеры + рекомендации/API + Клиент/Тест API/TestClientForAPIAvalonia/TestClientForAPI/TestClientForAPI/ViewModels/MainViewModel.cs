@@ -1,9 +1,15 @@
-﻿using ReactiveUI;
+﻿using Avalonia.Controls;
+using Avalonia.Input;
+using Avalonia.Media.Imaging;
+using ReactiveUI;
+using ReactiveUI.Fody.Helpers;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Net.Cache;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -16,40 +22,35 @@ namespace TestClientForAPI.ViewModels
     public class MainViewModel : ViewModelBase
     {
 
+        
         public MainViewModel()
         {
+
+
             Click = ReactiveCommand.Create(() =>
             {
-                APIExperts();
             });
+
+            APIExperts();
         }
 
-        //это моя API (переписал взятую от экспертов)
-        async void APIMe()
+
+
+
+
+
+        string pathForImage = Environment.CurrentDirectory + @"\Assets\";
+        List<Person>? _persons = new List<Person>();
+
+        [Reactive]
+        public List<Image> Items { get; set; } = new List<Image>();
+
+
+        private void Image_Holding(object? sender, HoldingRoutedEventArgs e)
         {
-            try
-            {
-                Text = "";
-
-
-                HttpClient httpClient = new HttpClient();
-                var persons = await httpClient.GetFromJsonAsync<List<Person>>("http://localhost:8080/PersonLocations");
-
-                //Вывод полученных данных
-                foreach (var person in persons!)
-                {
-                    Text += person.personCode + Environment.NewLine;
-                    Text += person.personRole + Environment.NewLine;
-                    Text += person.lastSecurityPointNumber + Environment.NewLine;
-                    Text += person.lastSecurityPointDirection + Environment.NewLine;
-                    Text += person.lastSecurityPointTime + Environment.NewLine + Environment.NewLine;
-                }
-            }
-            catch (Exception e)
-            {
-                Text = e.ToString();
-            }
+            Debug.WriteLine("12");
         }
+
         //это API от экспертов (браузер потестить не получится, так как там проблема с CORS)
         async void APIExperts()
         {
@@ -59,7 +60,7 @@ namespace TestClientForAPI.ViewModels
 
 
                 HttpClient httpClient = new HttpClient();
-                var response = await httpClient.GetAsync("http://localhost:4914/PersonLocations");
+                var response = await httpClient.GetAsync("http://localhost:8080/PersonLocations");
 
                 //Получение содержимого ответа
                 string text = await response.Content.ReadAsStringAsync();
@@ -72,45 +73,45 @@ namespace TestClientForAPI.ViewModels
                 text = text.Remove(text.Length - 1);
 
                 //Десериализация в нужный нам тип
-                var persons = JsonSerializer.Deserialize<Person[]>(text);
+                var persons = JsonSerializer.Deserialize<List<Person>>(text);
 
-                //Вывод полученных данных
-                foreach (var person in persons!)
+                if (persons == null)
                 {
-                    //это моё, на это смотреть не надо
-                    Debug.WriteLine(
+                    return;
+                }
 
-                        $" \r\n            " +
-                        $"new Person()\r\n            {{\r\n                " +
-                        $"PersonCode = {person.personCode},\r\n                " +
-                        $"PersonRole =\"{person.personRole}\",\r\n                " +
-                        $"LastSecurityPointNumber = {person.lastSecurityPointNumber},\r\n                " +
-                        $"LastSecurityPointDirection= \"{person.lastSecurityPointDirection}\",\r\n                " +
-                        $"LastSecurityPointTime = \"{person.lastSecurityPointTime}\"\r\n            }},"
+                persons = persons.OrderBy(x => x.lastSecurityPointNumber).ToList();
+
+                _persons = persons;
 
 
-                        );
 
+                List<Image> temp = new List<Image>();
+                foreach (var person in _persons)
+                {
+                    Image image = new Image();
+                    image.Holding += Image_Holding;
+                    if (person.personRole == "Клиент")
+                    {
+                        Debug.WriteLine(pathForImage + "Клиент.png");
+                        image.Source = new Bitmap(pathForImage + "Клиент.png");
+                    }
+                    if (person.personRole == "Сотрудник")
+                    {
+                        Debug.WriteLine(pathForImage + "Сотрудник.png");
+                        image.Source = new Bitmap(pathForImage + "Сотрудник.png");
+                    }
 
-                    Text += person.personCode + Environment.NewLine;
-                    Text += person.personRole + Environment.NewLine;
-                    Text += person.lastSecurityPointNumber + Environment.NewLine;
-                    Text += person.lastSecurityPointDirection + Environment.NewLine;
-                    Text += person.lastSecurityPointTime + Environment.NewLine + Environment.NewLine;
+                    Items.Add(image);
+
                 }
             }
-            catch (Exception e)
-            {
-                Text = e.ToString();
-            }
+            catch { }
         }
 
         public ICommand Click { get; set; }
-        string _text = "";
-        public string Text
-        {
-            get => _text;
-            set => this.RaiseAndSetIfChanged(ref _text, value);
-        }
+
+        [Reactive]
+        public string Text { get; set; }
     }
 }

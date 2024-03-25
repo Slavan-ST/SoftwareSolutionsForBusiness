@@ -3,29 +3,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:TestClientForAPI.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="TestClientForAPI.Views.MainView">
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
+             x:Class="TestClientForAPI.Views.MainView"
+			 >
 
-	<StackPanel>
+	<Grid PointerMoved="Grid_PointerMoved">
 
-		<Border MaxHeight="500">
-
-			<ScrollViewer>
-				<StackPanel>
-
-					<TextBox AcceptsReturn="True"
-							 TextWrapping="Wrap"
-							 Text="{Binding Text}"
-							 MinWidth="200"
-							 MinHeight="200"/>
-
-				</StackPanel>
-			</ScrollViewer>
+		<Image Name="Fon" Tag="1" PointerPressed="Image_PointerPressed"
+			   Stretch="Fill"/>
+		<Canvas Name="Items">
 
 
-		</Border>
-		<Button Content="ClickMe" Command="{Binding Click}"/>
-		
-	</StackPanel>
+		</Canvas>
+
+	</Grid>
+
+	
 	
 </UserControl>
