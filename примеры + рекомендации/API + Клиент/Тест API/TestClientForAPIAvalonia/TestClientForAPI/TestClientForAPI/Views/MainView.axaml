@@ -6,17 +6,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
              x:Class="TestClientForAPI.Views.MainView"
 			 >
-
-	<Grid PointerMoved="Grid_PointerMoved">
-
-		<Image Name="Fon" Tag="1" PointerPressed="Image_PointerPressed"
-			   Stretch="Fill"/>
-		<Canvas Name="Items">
-
-
-		</Canvas>
-
-	</Grid>
+	<TextBox Text="{Binding Text}"/>
 
 	
 	

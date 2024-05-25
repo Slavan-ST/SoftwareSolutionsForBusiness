@@ -8,38 +8,6 @@
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
-  
-  <ItemGroup>
-    <AvaloniaResource Remove="Assets\Клиент.png" />
-    <AvaloniaResource Remove="Assets\Помещение.png" />
-    <AvaloniaResource Remove="Assets\Помещение1.png" />
-    <AvaloniaResource Remove="Assets\Помещение2.png" />
-    <AvaloniaResource Remove="Assets\Сотрудник.png" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <None Remove="Assets\Клиент.png" />
-    <None Remove="Assets\Помещение.png" />
-    <None Remove="Assets\Сотрудник.png" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Content Include="Assets\Клиент.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Помещение.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Помещение1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Помещение2.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Сотрудник.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />

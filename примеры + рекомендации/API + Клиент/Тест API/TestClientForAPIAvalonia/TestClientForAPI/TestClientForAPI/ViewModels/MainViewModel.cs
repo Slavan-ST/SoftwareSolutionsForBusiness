@@ -1,6 +1,7 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Media.Imaging;
+using Helper.Models.Main;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using System;
@@ -16,13 +17,14 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using System.Windows.Input;
 using TestClientForAPI.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TestClientForAPI.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
 
-        
+
         public MainViewModel()
         {
 
@@ -36,77 +38,42 @@ namespace TestClientForAPI.ViewModels
 
 
 
+        List<EventO>? _persons = new List<EventO>();
 
-
-
-        string pathForImage = Environment.CurrentDirectory + @"\Assets\";
-        List<Person>? _persons = new List<Person>();
-
-        [Reactive]
-        public List<Image> Items { get; set; } = new List<Image>();
-
-
-        private void Image_Holding(object? sender, HoldingRoutedEventArgs e)
-        {
-            Debug.WriteLine("12");
-        }
-
+        
         //это API от экспертов (браузер потестить не получится, так как там проблема с CORS)
         async void APIExperts()
         {
+            Text = "start" + Environment.NewLine; ;
             try
             {
-                Text = "";
 
+                Text += "start 2" + Environment.NewLine;
 
                 HttpClient httpClient = new HttpClient();
-                var response = await httpClient.GetAsync("http://localhost:8080/PersonLocations");
+
+                Text += "start 3" + Environment.NewLine;
+                var response = await httpClient.GetAsync("http://localhost:4914/PersonLocations");
+
+
+                Text += "start 4" + Environment.NewLine;
 
                 //Получение содержимого ответа
                 string text = await response.Content.ReadAsStringAsync();
+                //Получение содержимого ответа
 
-                //Для нормальной десериализации необходимо удалить некоторые лишние символы (в чате покажу)
-                int index = text.IndexOf(":");
-
-                //само удаление этих символов
-                text = text.Remove(0, index + 1);
-                text = text.Remove(text.Length - 1);
-
-                //Десериализация в нужный нам тип
                 var persons = JsonSerializer.Deserialize<List<Person>>(text);
 
-                if (persons == null)
+                foreach (var p in persons)
                 {
-                    return;
-                }
-
-                persons = persons.OrderBy(x => x.lastSecurityPointNumber).ToList();
-
-                _persons = persons;
-
-
-
-                List<Image> temp = new List<Image>();
-                foreach (var person in _persons)
-                {
-                    Image image = new Image();
-                    image.Holding += Image_Holding;
-                    if (person.personRole == "Клиент")
-                    {
-                        Debug.WriteLine(pathForImage + "Клиент.png");
-                        image.Source = new Bitmap(pathForImage + "Клиент.png");
-                    }
-                    if (person.personRole == "Сотрудник")
-                    {
-                        Debug.WriteLine(pathForImage + "Сотрудник.png");
-                        image.Source = new Bitmap(pathForImage + "Сотрудник.png");
-                    }
-
-                    Items.Add(image);
-
+                    Text += p.personCode;
                 }
             }
-            catch { }
+            catch (Exception ex)
+            {
+                Text = ex.Message;
+            }
+            Text += "start 6" + Environment.NewLine;
         }
 
         public ICommand Click { get; set; }
