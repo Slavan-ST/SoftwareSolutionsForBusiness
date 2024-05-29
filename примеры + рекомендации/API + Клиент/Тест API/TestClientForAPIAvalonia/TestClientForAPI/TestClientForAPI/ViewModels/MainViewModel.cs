@@ -15,6 +15,7 @@ using System.Net.Cache;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
+using System.Threading;
 using System.Windows.Input;
 using TestClientForAPI.Models;
 using static System.Net.Mime.MediaTypeNames;
@@ -33,7 +34,7 @@ namespace TestClientForAPI.ViewModels
             {
             });
 
-            APIExperts();
+            ThreadPool.QueueUserWorkItem(APIExperts);
         }
 
 
@@ -41,32 +42,28 @@ namespace TestClientForAPI.ViewModels
         List<EventO>? _persons = new List<EventO>();
 
         
-        //это API от экспертов (браузер потестить не получится, так как там проблема с CORS)
-        async void APIExperts()
+        async void APIExperts(object? stat)
         {
             Text = "start" + Environment.NewLine; ;
             try
             {
-
-                Text += "start 2" + Environment.NewLine;
-
                 HttpClient httpClient = new HttpClient();
-
-                Text += "start 3" + Environment.NewLine;
                 var response = await httpClient.GetAsync("http://localhost:4914/PersonLocations");
-
-
-                Text += "start 4" + Environment.NewLine;
 
                 //Получение содержимого ответа
                 string text = await response.Content.ReadAsStringAsync();
                 //Получение содержимого ответа
 
                 var persons = JsonSerializer.Deserialize<List<Person>>(text);
+                
+                if (persons == null)
+                {
+                    return;
+                }
 
                 foreach (var p in persons)
                 {
-                    Text += p.personCode;
+                    Text += p.personCode + Environment.NewLine;
                 }
             }
             catch (Exception ex)
@@ -79,6 +76,6 @@ namespace TestClientForAPI.ViewModels
         public ICommand Click { get; set; }
 
         [Reactive]
-        public string Text { get; set; }
+        public string Text { get; set; } = string.Empty;
     }
 }
