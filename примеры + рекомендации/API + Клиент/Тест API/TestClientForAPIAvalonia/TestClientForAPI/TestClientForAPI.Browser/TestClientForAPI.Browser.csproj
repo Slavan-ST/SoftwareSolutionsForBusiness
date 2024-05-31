@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TestClientForAPI\TestClientForAPI.csproj" />
+	  <ProjectReference Include="..\TestClientForAPI\TestClientForAPI.csproj" />	  
   </ItemGroup>
+
 </Project>

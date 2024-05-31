@@ -1,8 +1,23 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using System.Net;
 using WebAPI.Models;
 
 namespace WebAPI.Controllers
 {
+
+    [ApiController]
+    [Route("[controller]")]
+    public class HomeController : ControllerBase
+    {
+        [HttpGet("{message}")]
+        public HttpStatusCode Get(string message)
+        {
+            Console.WriteLine(message);
+            Debug.WriteLine(message);
+            return HttpStatusCode.OK;
+        }
+    }
     [ApiController]
     [Route("[controller]")]
     public class PersonLocationsController : ControllerBase
